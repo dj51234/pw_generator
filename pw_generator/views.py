@@ -3,19 +3,19 @@ from django import forms
 from . import chars
 
 class AddForm(forms.Form):
-    upper = forms.IntegerField(label="Uppercase letters: ")
-    lower = forms.IntegerField(label="Lowercase letters: ")
-    symbols = forms.IntegerField(label="Symbols")
-    nums = forms.IntegerField(label="Numbers")
+    upper = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Uppercase letters'}))
+    lower = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Lowercase letters'}))
+    symbols = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Symbols'}))
+    nums = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Numbers'}))
 
 # Create your views here.
 def render_generator(request):
-    return render(request, 'django_redo/generator.html', {})
+    return render(request, 'pw_generator/generator.html', {})
 
 def create(request):
 
     if request.method == 'GET':
-        return render(request,'django_redo/create.html',{'form': AddForm()})
+        return render(request,'pw_generator/create.html',{'form': AddForm()})
 
     elif request.method == 'POST':
         form = AddForm(request.POST)
@@ -34,7 +34,7 @@ def create(request):
             list.remove(pw)
             list = ' '.join(list)
             
-            return render(request,'django_redo/generated_pw.html',{
+            return render(request,'pw_generator/generated_pw.html',{
                 'form': form,
                 'upper': upper,
                 'lower': lower,
@@ -46,4 +46,4 @@ def create(request):
                 'pw': pw     
             })
         else:
-            return render(request,'django_redo/create.html',{'form': form}) 
+            return render(request,'pw_generator/create.html',{'form': form}) 

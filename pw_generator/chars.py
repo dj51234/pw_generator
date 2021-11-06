@@ -32,7 +32,7 @@ def allChars(a,b,c,d):
     final_password = list(final_password)
     random.shuffle(final_password)
     final_password = ''.join(final_password)
-    return f'Your password of {a} {options[0]}, {b} {options[1]}, {c} {options[2]} and {d} {options[3]} is: {final_password}'
+    return f'{final_password}'
     
 def numOfUpper(n):
     i = 0

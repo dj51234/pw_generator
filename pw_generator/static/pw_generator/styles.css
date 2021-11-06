@@ -1,0 +1,55 @@
+body {
+    background: #0B132B;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+strong {
+    color: #5BC0BE;
+}
+
+input {
+    display: block;
+    margin: 25px 0;
+    border: 1px solid #FEFEFE;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+label {
+    display: none;
+}
+
+input::placeholder {
+    color: #0B132B;
+    opacity: .3;
+}
+
+.errorlist {
+    color: red;
+}
+
+.button {
+    background: #5BC0BE;
+    color: #0B132B;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: .3s;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.button:hover {
+    background: #FFF;
+    color: #1C2541;
+}
